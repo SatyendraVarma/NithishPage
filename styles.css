@@ -1,0 +1,75 @@
+/* General Page Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f8; /* Light formal background color */
+  color: #333; /* Darker text for better contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #ff6f61;
+  animation: colorShift 5s infinite;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #ffb88c;
+  animation: fadeIn 3s ease-in-out;
+}
+
+/* Game Area */
+.game-container {
+  width: 90vw;
+  height: 80vh;
+  border: 5px solid white;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle, #e3ffe7 0%, #d9e7ff 100%);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  animation: borderGlow 3s ease-in-out infinite alternate;
+}
+
+img {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+img:hover {
+  transform: scale(1.3) rotate(360deg);
+}
+
+/* Animations */
+@keyframes colorShift {
+  0% { color: #ff6f61; }
+  25% { color: #ffb88c; }
+  50% { color: #f8d49d; }
+  75% { color: #f4bb44; }
+  100% { color: #ff6f61; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes borderGlow {
+  0% { border-color: #ffcc33; }
+  50% { border-color: #ff6f61; }
+  100% { border-color: #33ffcc; }
+}

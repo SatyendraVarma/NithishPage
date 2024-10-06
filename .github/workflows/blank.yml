@@ -3,28 +3,18 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change this to the branch you want to deploy from, such as master or main.
+      - main  # Use the branch you want to deploy from, such as main or master
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository content
       uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '14'
-
-    - name: Install dependencies and build
-      run: |
-        npm install
-        npm run build  # If you don't have a build step, you can remove this line.
-
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./  # Directory to deploy (use ./ if everything is in the root).
+        publish_dir: ./  # Use ./ if everything (HTML, CSS, JS) is in the root directory.
